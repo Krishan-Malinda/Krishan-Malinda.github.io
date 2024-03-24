@@ -6,13 +6,20 @@
 //
 // Scripts
 // 
-function calculate_age() {
-    var dob = new Date(1999, 10, 2);
-    var diff_ms = Date.now() - dob.getTime();
-    return 67;
-}
 
 window.addEventListener('DOMContentLoaded', event => {
+
+// Age calculate
+    let bDay = new Date("11/02/1999");
+    let crntDate = new Date();
+
+    // Calculating the time difference
+    // of two dates
+    let Difference_In_Time = crntDate.getTime() - bDay.getTime();
+    let Difference_In_Years = Math.round(Difference_In_Time / (365*24*3600*1000));
+
+document.getElementById("age").innerHTML += Difference_In_Years;
+document.getElementById("copyRight").innerHTML += crntDate.getFullYear();
 
     // Navbar shrink function
     var navbarShrink = function () {
